@@ -5,12 +5,12 @@ License: Creative Commons Attribution 4.0 Unported
 License URL: https://creativecommons.org/licenses/by/4.0/
 */
 
-(function($) {
+(function ($) {
 
     "use strict"; // Start of use strict
-    
+
     // Smooth scrolling using jQuery easing
-    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
         var target = $(this.hash);
         target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
         if (target.length) {
@@ -21,8 +21,21 @@ License URL: https://creativecommons.org/licenses/by/4.0/
         }
     });
 
+    //custom tabs
+    $(function () {
+        var hash = window.location.hash;
+        hash && $('ul.nav a[href="' + hash + '"]').tab('show');
+
+        $('.nav-tabs a').click(function (e) {
+            $(this).tab('show');
+            /* var scrollmem = $('body').scrollTop();
+            window.location.hash = this.hash;
+            $('html,body').scrollTop(scrollmem); */
+        });
+    });
+
     // Closes responsive menu when a scroll trigger link is clicked
-    $('.js-scroll-trigger').click(function() {
+    $('.js-scroll-trigger').click(function () {
         $('.navbar-collapse').collapse('hide');
     });
 
@@ -33,7 +46,7 @@ License URL: https://creativecommons.org/licenses/by/4.0/
     });
 
     //fixed navbar
-    var toggleAffix = function(affixElement, scrollElement, wrapper) {
+    var toggleAffix = function (affixElement, scrollElement, wrapper) {
 
         var height = affixElement.outerHeight(),
             top = wrapper.offset().top;
@@ -48,12 +61,12 @@ License URL: https://creativecommons.org/licenses/by/4.0/
 
     };
 
-    $('[data-toggle="affix"]').each(function() {
+    $('[data-toggle="affix"]').each(function () {
         var ele = $(this),
             wrapper = $('<div></div>');
 
         ele.before(wrapper);
-        $(window).on('scroll resize', function() {
+        $(window).on('scroll resize', function () {
             toggleAffix(ele, $(this), wrapper);
         });
 
@@ -67,7 +80,7 @@ License URL: https://creativecommons.org/licenses/by/4.0/
 /*====================================================
                     TESTIMONIALS
 ====================================================*/
-$(function() {
+$(function () {
     $("#testimonial-slider").owlCarousel({
         items: 2,
         smartSpeed: 700,
@@ -95,34 +108,34 @@ $(function() {
 /*====================================================
                         PORTFOLIO
 ====================================================*/
-  $(function() {
+$(function () {
 
-      $("#portfolio").magnificPopup({
-          delegate: 'a', // child items selector, by clicking on it popup will open
-          type: 'image',
-          gallery: {
-              enabled: true
-          }
+    $("#portfolio").magnificPopup({
+        delegate: 'a', // child items selector, by clicking on it popup will open
+        type: 'image',
+        gallery: {
+            enabled: true
+        }
 
-      });
-  });
+    });
+});
 
 /* ====================================================
                        BACK TO TOP
 =======================================================*/
-  (function($) {
+(function ($) {
 
-      $(window).scroll(function() {
+    $(window).scroll(function () {
 
-          if ($(this).scrollTop() < 50) {
-              // hide nav
-              $("nav").removeClass("ss-top-nav");
-              $("#back-to-top").fadeOut();
+        if ($(this).scrollTop() < 50) {
+            // hide nav
+            $("nav").removeClass("ss-top-nav");
+            $("#back-to-top").fadeOut();
 
-          } else {
-              // show nav
-              $("nav").addClass("ss-top-nav");
-              $("#back-to-top").fadeIn();
-          }
-      });
-  })(jQuery); // End of use strict
+        } else {
+            // show nav
+            $("nav").addClass("ss-top-nav");
+            $("#back-to-top").fadeIn();
+        }
+    });
+})(jQuery); // End of use strict
