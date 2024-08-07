@@ -8948,3 +8948,7 @@ ul.social-buttons li a:hover {
 	background: #f59f7e;
 	color: #fff;
 }
+
+footer .fa {
+	margin: auto !important;
+}
