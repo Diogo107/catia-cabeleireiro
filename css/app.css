@@ -8842,6 +8842,12 @@ section#contact p {
 section#contact a {
 	color: #ddd;
 }
+section#contact .contacts-column {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+}
 section#contact .section-heading {
 	color: #fff !important;
 }
