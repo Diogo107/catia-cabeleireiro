@@ -8825,9 +8825,25 @@ section#contact {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	color: white;
+}
+section#contact h1 {
+	color: #fff;
+}
+section#contact .desc {
+	color: #fff;
+}
+section#contact .fa {
+	margin-right: 5px;
+}
+section#contact p {
+	color: #ddd;
+}
+section#contact a {
+	color: #ddd;
 }
 section#contact .section-heading {
-	color: #fff;
+	color: #fff !important;
 }
 section#contact .form-group {
 	margin-bottom: 25px;
